@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Life Easy</title>
+
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/99/99618.png">
+
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+
+  <!-- Javascript from Bootstrap-->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/3789dd4df1.js" crossorigin="anonymous"></script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;900&family=Ubuntu:wght@300;400;700&display=swap"
+    rel="stylesheet">
+
+  <style>
+    body {
+      font-family: "Montserrat";
+      /* background-color: cadetblue; */
+    }
+
+    .container-fluid {
+      padding: 3% 15% 7%;
+    }
+
+
+    .navbar {
+      padding: 0 0 4.5rem;
+    }
+
+    .navbar-brand {
+      font-family: "Ubuntu";
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    .nav-item {
+      padding: 0 15px;
+    }
+
+    .nav-link {
+      font-size: 1.2rem;
+      font-family: "Montserrat";
+      font-weight: 300;
+    }
+
+    #title {
+      background-color: #A1C3D1;
+      color: #fff;
+    }
+
+    #lottomax {
+      padding: 15% 15%;
+      text-align: center;
+      background-color: #fff;
+      position: relative;
+    }
+
+    #ipvalidator {
+      padding: 15% 15%;
+      text-align: center;
+      background-color: #868B94;
+      position: relative;
+    }
+
+    #currencyconverter {
+      padding: 15% 15%;
+      text-align: center;
+      position: relative;
+      background-color: rgba(92, 216, 54, 0.404);
+    }
+
+    #weatherPanel {
+      padding: 15% 0%;
+      text-align: center;
+      position: relative;
+      background-color: rgb(160, 216, 248);
+    }
+
+    #smsSender {
+      padding: 15% 15%;
+      text-align: center;
+      position: relative;
+      background-color: wheat;
+    }
+
+
+    .titleimg {
+      text-align: center;
+    }
+
+    .container {
+      text-align: center;
+    }
+
+
+    .ipcontainer {
+      text-align: center;
+    }
+
+    h1 {
+      font-family: "Montserrat";
+      font-weight: 900;
+      font-size: 3rem;
+      line-height: 1.5;
+    }
+
+    h2 {
+      font-family: "Montserrat";
+      font-weight: bold;
+      font-size: 2.5rem;
+      line-height: 1.5;
+    }
+
+    h3 {
+      font-family: "Montserrat";
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+
+
+    #footer {
+      text-align: center;
+      background-color: #fff;
+      padding: 7% 15%;
+    }
+
+    .footer-item {
+      margin: 1%;
+      color: #1C2331;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <section id="title">
+    <div class="container-fluid">
+
+      <!-- Nav Bar -->
+
+      <nav class="navbar navbar-expand-lg  navbar-dark">
+        <a class="navbar-brand" href="">lifeEasy</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#lottomax">LottoMax</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#ipvalidator">Ip Validator</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#currencyconverter">Converter</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#weatherPanel">Weather</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#smsSender">Sms</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <!-- Title -->
+
+      <div class="row">
+
+        <div class="col-lg-6">
+          <h1>Make everyday life easier by using our utilities.</h1>
+        </div>
+
+        <div class="col-lg-6 titleimg">
+          &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
+          <i class="fa-solid fa-temperature-high fa-4x img"></i>
+          <br>
+          <br>
+          &nbsp; &nbsp; &nbsp;
+          <i class="fa-solid fa-comment-dollar fa-4x img"></i>
+          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+          &nbsp;
+          &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
+          &nbsp;&nbsp;
+          <i class="fa-solid fa-cloud-moon-rain fa-4x img"></i>
+          <br>
+          <br>
+          <i class="fa-solid fa-network-wired fa-4x img"></i>
+          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
+          <i class="fa-solid fa-comment-sms fa-4x img"></i>
+        </div>
+
+      </div>
+  </section>
+  </div>
+
+
+  <!-- Lottomax -->
+  <section id="lottomax">
+    <!-- Dinamic Background -->
+
+    <div class="container">
+
+      <div class="bg"></div>
+      <div class="bg bg2"></div>
+      <div class="bg bg3"></div>
+
+      <h2 class="mt-4">Welcome to LottoMax</h2>
+      <!-- <hr> -->
+
+      <h3 id="winning_numbers">&nbsp;</h3>
+
+      <!-- <hr> -->
+      <p>Try your luck!</p>
+      <br>
+      <br>
+
+      <button class="btn btn-dark btn-lg" onclick="choose();"> Go <i class="fa-solid fa-dollar-sign"></i></button>
+    </div>
+  </section>
+
+  <section id="ipvalidator">
+    <div class="ipcontainer">
+      <h2 class="mt-4">IP Validator </h2>
+
+      <!-- <hr> -->
+
+      <h3 id="validate_ip">&nbsp;</h3>
+
+      <!-- <hr> -->
+
+      <br>
+      <br>
+      <label for="fname">Ip Address</label>
+      <br>
+      <br>
+      <input type="text" id="ipaddress" name="ipaddress">
+      <br>
+      <br>
+      <button class="btn btn-dark btn-lg" onclick="validate();">Check <i class="fa-solid fa-network-wired"></i></button>
+    </div>
+  </section>
+
+
+
+  <!-- Currency Converter -->
+  <section id="currencyconverter">
+
+    <h2 class="mt-4">Currency Converter</h2>
+    <!-- <hr> -->
+    <label for="from">You have:</label>
+
+    <!-- 46 currencies -->
+
+    <select name="from" id="from">
+      <option value="USD" selected="selected">United States Dollars</option>
+      <option value="EUR">Euro</option>
+      <option value="GBP">United Kingdom Pounds</option>
+      <option value="DZD">Algeria Dinars</option>
+      <option value="AUD">Australia Dollars</option>
+      <option value="BSD">Bahamas Dollars</option>
+      <option value="BBD">Barbados Dollars</option>
+      <option value="BMD">Bermuda Dollars</option>
+      <option value="CAD">Canada Dollars</option>
+      <option value="CLP">Chile Pesos</option>
+      <option value="CNY">China Yuan Renmimbi</option>
+      <option value="DKK">Denmark Kroner</option>
+      <option value="XCD">Eastern Caribbean Dollars</option>
+      <option value="EGP">Egypt Pounds</option>
+      <option value="FJD">Fiji Dollars</option>
+      <option value="HKD">Hong Kong Dollars</option>
+      <option value="HUF">Hungary Forint</option>
+      <option value="ISK">Iceland Krona</option>
+      <option value="INR">India Rupees</option>
+      <option value="IDR">Indonesia Rupiah</option>
+      <option value="ILS">Israel New Shekels</option>
+      <option value="JMD">Jamaica Dollars</option>
+      <option value="JPY">Japan Yen</option>
+      <option value="JOD">Jordan Dinar</option>
+      <option value="KRW">Korea (South) Won</option>
+      <option value="LBP">Lebanon Pounds</option>
+      <option value="MYR">Malaysia Ringgit</option>
+      <option value="NZD">New Zealand Dollars</option>
+      <option value="NOK">Norway Kroner</option>
+      <option value="PKR">Pakistan Rupees</option>
+      <option value="PHP">Philippines Pesos</option>
+      <option value="SAR">Saudi Arabia Riyal</option>
+      <option value="XAG">Silver Ounces</option>
+      <option value="SGD">Singapore Dollars</option>
+      <option value="ZAR">South Africa Rand</option>
+      <option value="KRW">South Korea Won</option>
+      <option value="XDR">Special Drawing Right (IMF)</option>
+      <option value="SEK">Sweden Krona</option>
+      <option value="CHF">Switzerland Francs</option>
+      <option value="TWD">Taiwan Dollars</option>
+      <option value="THB">Thailand Baht</option>
+      <option value="TTD">Trinidad and Tobago Dollars</option>
+      <option value="ZMK">Zambia Kwacha</option>
+      <option value="EUR">Euro</option>
+      <option value="XCD">Eastern Caribbean Dollars</option>
+      <option value="XDR">Special Drawing Right (IMF)</option>
+      <option value="XAG">Silver Ounces</option>
+    </select>
+
+    <br>
+    <br>
+    <label for="to">You Want:</label>
+    <select name="to" id="to">
+      <option value="USD" selected="selected">United States Dollars</option>
+      <option value="EUR">Euro</option>
+      <option value="GBP">United Kingdom Pounds</option>
+      <option value="DZD">Algeria Dinars</option>
+      <option value="AUD">Australia Dollars</option>
+      <option value="BSD">Bahamas Dollars</option>
+      <option value="BBD">Barbados Dollars</option>
+      <option value="BMD">Bermuda Dollars</option>
+      <option value="CAD">Canada Dollars</option>
+      <option value="CLP">Chile Pesos</option>
+      <option value="CNY">China Yuan Renmimbi</option>
+      <option value="DKK">Denmark Kroner</option>
+      <option value="XCD">Eastern Caribbean Dollars</option>
+      <option value="EGP">Egypt Pounds</option>
+      <option value="FJD">Fiji Dollars</option>
+      <option value="HKD">Hong Kong Dollars</option>
+      <option value="HUF">Hungary Forint</option>
+      <option value="ISK">Iceland Krona</option>
+      <option value="INR">India Rupees</option>
+      <option value="IDR">Indonesia Rupiah</option>
+      <option value="ILS">Israel New Shekels</option>
+      <option value="JMD">Jamaica Dollars</option>
+      <option value="JPY">Japan Yen</option>
+      <option value="JOD">Jordan Dinar</option>
+      <option value="KRW">Korea (South) Won</option>
+      <option value="LBP">Lebanon Pounds</option>
+      <option value="MYR">Malaysia Ringgit</option>
+      <option value="NZD">New Zealand Dollars</option>
+      <option value="NOK">Norway Kroner</option>
+      <option value="PKR">Pakistan Rupees</option>
+      <option value="PHP">Philippines Pesos</option>
+      <option value="SAR">Saudi Arabia Riyal</option>
+      <option value="XAG">Silver Ounces</option>
+      <option value="SGD">Singapore Dollars</option>
+      <option value="ZAR">South Africa Rand</option>
+      <option value="KRW">South Korea Won</option>
+      <option value="XDR">Special Drawing Right (IMF)</option>
+      <option value="SEK">Sweden Krona</option>
+      <option value="CHF">Switzerland Francs</option>
+      <option value="TWD">Taiwan Dollars</option>
+      <option value="THB">Thailand Baht</option>
+      <option value="TTD">Trinidad and Tobago Dollars</option>
+      <option value="ZMK">Zambia Kwacha</option>
+      <option value="EUR">Euro</option>
+      <option value="XCD">Eastern Caribbean Dollars</option>
+      <option value="XDR">Special Drawing Right (IMF)</option>
+      <option value="XAG">Silver Ounces</option>
+    </select>
+    <br>
+    <br>
+    <label for="to">Amount you have:</label>
+    <input type="text" id="amt">
+    <br>
+    <br>
+    <h3 id="conversion_result">&nbsp;</h3>
+
+
+    <br>
+    <br>
+
+    <button class="btn btn-dark btn-lg" onclick="covert();"> Convert <i class="fa-solid fa-rotate"></i></button>
+    <!-- <hr> -->
+    </div>
+  </section>
+
+  <!-- Weather Panel -->
+
+  <section id="weatherPanel">
+    <!-- <section class="vh-100"> -->
+    <div class="container">
+
+      <h2 class="mt-4">Weather</h2>
+      <label for="fname">City</label>
+      <br>
+      <br>
+      <input type="text" id="city" name="city">
+      <br>
+      <br>
+      <button class="btn btn-dark btn-lg" onclick="getWeather();">Check <i class="fa-solid fa-cloud-sun-rain"></i></button>
+
+      <!-- TEST -->
+      <!-- <p id="weatherReport">&nbsp;</p> -->
+
+      <div class="container py-5 h-100" id="weatherpanel">
+
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-md-8 col-lg-6 col-xl-4">
+
+            <div class="card" style="color: #4B515D; border-radius: 35px;">
+              <div class="card-body p-4">
+
+                <div class="d-flex">
+                  <h6 class="flex-grow-1" id="locationName">Location</h6>
+                  <h6 id="time">Time</h6>
+                </div>
+
+                <div class="d-flex flex-column text-center mt-5 mb-4">
+                  <h6 id="cuurentTemp" class="display-4 mb-0 font-weight-bold" style="color: #1C2331;"> Temperature in
+                    °C
+                  </h6>
+                  <span id="currentCondition" class="small" style="color: #868B94">Condition</span>
+                </div>
+
+                <div class="d-flex align-items-center">
+                  <div class="flex-grow-1" style="font-size: 1rem;">
+                    <div><i class="fas fa-wind fa-fw" style="color: #868B94;"></i> <span id="windSpeed" class="ms-1">
+                        Wind
+                        speed </span></div>
+                    <div><i class="fas fa-tint fa-fw" style="color: #868B94;"></i> <span id="feelsLike" class="ms-1">
+                        Feels Like </span></div>
+                    <div><i class="fas fa-sun fa-fw" style="color: #868B94;"></i> <span id="visibility" class="ms-1">
+                        Visibility </span></div>
+                  </div>
+                  <div>
+                    <img id="currentImage"
+                      src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-weather/ilu1.webp" width="100px">
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+  </section>
+
+
+
+
+
+  <section id="smsSender">
+
+    <h2 class="mt-4">Sms Sender</h2>
+    <!-- <hr> -->
+    <label for="mobileNumber">Mobile Number:</label>
+    <input type="text" id="mobileNumber">
+    <br>
+    <br>
+    <label for="mobileNumber">Message:</label>
+    <input type="text" id="message">
+    <br>
+    <br>
+    <h3 id="sms_status">&nbsp;</h3>
+    <br>
+    <br>
+    <button class="btn btn-dark btn-lg" onclick="sendSms();"> Send <i class="fa-solid fa-rotate"></i></button>
+    <!-- <hr> -->
+  </section>>
+
+
+  </div>
+
+
+  <footer id="footer">
+    <a href="https://twitter.com/lasallecollege/"><i class="footer-item fa-brands fa-twitter"></i></a>
+    <a href="https://www.facebook.com/collegelasalle/"><i class="footer-item fa-brands fa-facebook-f"></i></a> 
+    <a href="https://www.instagram.com/collegelasalle/"><i class="footer-item fa-brands fa-instagram"></i></a>
+    <i class="footer-item fa-solid fa-envelope"></i>
+    <p>© Copyright 2022 Team Anonymous</p>
+
+  </footer>
+
+
+</body>
+<script>
+
+  document.getElementById("weatherpanel").style.visibility = "hidden";
+
+  function choose() {
+    fetch("/play")
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById("winning_numbers").innerHTML = "Winning Numbers are: " + data.winning_numbers;
+        document.getElementById("winning_numbers").style.color = "green";
+      })
+  }
+
+  function validate() {
+    var ip = document.getElementById("ipaddress").value;
+    fetch("/verify?c=" + ip)
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById("validate_ip").innerHTML = data.ip_validator_result;
+        if (data.ip_validator_result == "It is a Valid IP!") {
+          document.getElementById("validate_ip").style.color = "green";
+        } else {
+          document.getElementById("validate_ip").style.color = "red";
+        }
+      })
+  }
+
+
+  function getWeather() {
+    var location = document.getElementById("city").value;
+    fetch("/getweather?c=" + location)
+      .then(response => response.json())
+      .then(data => {
+
+        //TEST
+        // document.getElementById("weatherReport").innerHTML = data.weather_report;
+
+        var obj = JSON.parse(data.weather_report);
+
+        document.getElementById("locationName").innerHTML = obj.location.name;
+        document.getElementById("time").innerHTML = obj.location.localtime;
+        document.getElementById("cuurentTemp").innerHTML = obj.current.temp_c + "°C";
+        document.getElementById("currentCondition").innerHTML = obj.current.condition.text;
+        document.getElementById("currentImage").src = obj.current.condition.icon;
+        document.getElementById("windSpeed").innerHTML = "Wind Speed: " + obj.current.wind_kph + " km/h";
+        document.getElementById("feelsLike").innerHTML = "Feels like: " + obj.current.feelslike_c + "°C";
+        document.getElementById("visibility").innerHTML = "Visibility: " + obj.current.vis_km + " km";
+        document.getElementById("weatherpanel").style.visibility = "visible";
+
+
+      })
+  }
+
+  function covert() {
+    var from = document.getElementById("from").value;
+    var to = document.getElementById("to").value;
+    var amt = document.getElementById("amt").value;
+    fetch("/convertCurrency?from=" + from + "&to=" + to + "&have=" + amt)
+      .then(response => response.json())
+      .then(data => {
+
+
+        var obj = JSON.parse(data.converted_currency);
+
+        // document.getElementById("conversion_result").innerHTML = data.converted_currency;
+
+        document.getElementById("conversion_result").innerHTML = obj.old_amount + " " + obj.old_currency + " equals " + obj.new_amount + " " + obj.new_currency + ".";
+
+      })
+  }
+
+  function sendSms() {
+    var number = "1" + document.getElementById("mobileNumber").value;
+    var message = document.getElementById("message").value;
+    fetch("/sendSms?number=" + number + "&message=" + message)
+      .then(response => response.json())
+      .then(data => {
+
+        document.getElementById("sms_status").innerHTML = data.message_status;
+        document.getElementById("sms_status").style.color = "green";
+      })
+
+  }
+
+</script>
+
+</html>
