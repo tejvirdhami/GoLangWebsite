@@ -38,13 +38,11 @@
   <style>
     body {
       font-family: "Montserrat";
-      /* background-color: cadetblue; */
     }
 
     .container-fluid {
       padding: 3% 15% 7%;
     }
-
 
     .navbar {
       padding: 0 0 4.5rem;
@@ -106,19 +104,10 @@
       background-color: wheat;
     }
 
-
     .titleimg {
       text-align: center;
     }
 
-    .container {
-      text-align: center;
-    }
-
-
-    .ipcontainer {
-      text-align: center;
-    }
 
     h1 {
       font-family: "Montserrat";
@@ -222,8 +211,8 @@
 
 
   <!-- Lottomax -->
+
   <section id="lottomax">
-    <!-- Dinamic Background -->
 
     <div class="container">
 
@@ -232,11 +221,9 @@
       <div class="bg bg3"></div>
 
       <h2 class="mt-4">Welcome to LottoMax</h2>
-      <!-- <hr> -->
 
       <h3 id="winning_numbers">&nbsp;</h3>
 
-      <!-- <hr> -->
       <p>Try your luck!</p>
       <br>
       <br>
@@ -249,11 +236,7 @@
     <div class="ipcontainer">
       <h2 class="mt-4">IP Validator </h2>
 
-      <!-- <hr> -->
-
       <h3 id="validate_ip">&nbsp;</h3>
-
-      <!-- <hr> -->
 
       <br>
       <br>
@@ -268,15 +251,15 @@
   </section>
 
 
-
   <!-- Currency Converter -->
+
   <section id="currencyconverter">
 
     <h2 class="mt-4">Currency Converter</h2>
-    <!-- <hr> -->
+
     <label for="from">You have:</label>
 
-    <!-- 46 currencies -->
+    <!-- Ability to convert a total of 46 Currencies -->
 
     <select name="from" id="from">
       <option value="USD" selected="selected">United States Dollars</option>
@@ -387,20 +370,17 @@
     <br>
     <br>
     <h3 id="conversion_result">&nbsp;</h3>
-
-
     <br>
     <br>
-
     <button class="btn btn-dark btn-lg" onclick="covert();"> Convert <i class="fa-solid fa-rotate"></i></button>
-    <!-- <hr> -->
     </div>
   </section>
+
 
   <!-- Weather Panel -->
 
   <section id="weatherPanel">
-    <!-- <section class="vh-100"> -->
+
     <div class="container">
 
       <h2 class="mt-4">Weather</h2>
@@ -410,9 +390,10 @@
       <input type="text" id="city" name="city">
       <br>
       <br>
-      <button class="btn btn-dark btn-lg" onclick="getWeather();">Check <i class="fa-solid fa-cloud-sun-rain"></i></button>
+      <button class="btn btn-dark btn-lg" onclick="getWeather();">Check <i
+          class="fa-solid fa-cloud-sun-rain"></i></button>
 
-      <!-- TEST -->
+      <!-- TEST TO SHOW WHAT WE GET AS A RESPONSE -->
       <!-- <p id="weatherReport">&nbsp;</p> -->
 
       <div class="container py-5 h-100" id="weatherpanel">
@@ -461,13 +442,11 @@
   </section>
 
 
-
-
+  <!-- Sms Sender -->
 
   <section id="smsSender">
 
     <h2 class="mt-4">Sms Sender</h2>
-    <!-- <hr> -->
     <label for="mobileNumber">Mobile Number:</label>
     <input type="text" id="mobileNumber">
     <br>
@@ -480,7 +459,6 @@
     <br>
     <br>
     <button class="btn btn-dark btn-lg" onclick="sendSms();"> Send <i class="fa-solid fa-rotate"></i></button>
-    <!-- <hr> -->
   </section>>
 
 
@@ -489,7 +467,7 @@
 
   <footer id="footer">
     <a href="https://twitter.com/lasallecollege/"><i class="footer-item fa-brands fa-twitter"></i></a>
-    <a href="https://www.facebook.com/collegelasalle/"><i class="footer-item fa-brands fa-facebook-f"></i></a> 
+    <a href="https://www.facebook.com/collegelasalle/"><i class="footer-item fa-brands fa-facebook-f"></i></a>
     <a href="https://www.instagram.com/collegelasalle/"><i class="footer-item fa-brands fa-instagram"></i></a>
     <i class="footer-item fa-solid fa-envelope"></i>
     <p>© Copyright 2022 Team Anonymous</p>
@@ -559,10 +537,7 @@
       .then(response => response.json())
       .then(data => {
 
-
         var obj = JSON.parse(data.converted_currency);
-
-        // document.getElementById("conversion_result").innerHTML = data.converted_currency;
 
         document.getElementById("conversion_result").innerHTML = obj.old_amount + " " + obj.old_currency + " equals " + obj.new_amount + " " + obj.new_currency + ".";
 

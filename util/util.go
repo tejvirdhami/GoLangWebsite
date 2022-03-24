@@ -53,16 +53,7 @@ func ValidateIp(ip string) Round {
 		ipValidatorResult = "It is an Invalid IP!"
 	}
 
-	// error := ""
 	// obj, err := regexp.Match("(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])", []byte(ip))
-	// if obj == true {
-	// 	ipValidatorResult = "It is a Valid IP!"
-	// } else if obj == false {
-	// 	ipValidatorResult = "It is an Invalid IP!"
-	// } else {
-	// 	error = err.Error()
-	// 	fmt.Print(error)
-	// }
 
 	var result Round
 	result.IpValidatorResult = ipValidatorResult
@@ -83,9 +74,6 @@ func GetWeather(city string) Round {
 	defer res.Body.Close()
 	body, _ := ioutil.ReadAll(res.Body)
 
-	// fmt.Println(res)
-	// fmt.Println(string(body))
-
 	var result Round
 	result.WeatherReport = (string(body))
 	return result
@@ -104,9 +92,6 @@ func ConvertCurrency(from string, to string, have string) Round {
 
 	defer res.Body.Close()
 	body, _ := ioutil.ReadAll(res.Body)
-
-	// fmt.Println(res)
-	// fmt.Println(string(body))
 
 	var result Round
 	result.ConvertedCurrency = (string(body))
@@ -129,9 +114,6 @@ func SendSms(number string, text string) Round {
 
 	defer res.Body.Close()
 	body, _ := ioutil.ReadAll(res.Body)
-
-	// fmt.Println(res)
-	// fmt.Println(string(body))
 
 	var result Round
 	// result.MessageStatus = "Message Sent!"
