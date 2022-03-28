@@ -101,8 +101,9 @@ func main() {
 	http.HandleFunc("/sendSms", sendSms)
 	http.HandleFunc("/", homePage)
 
+	fs := http.FileServer(http.Dir("../myApp"))
 	log.Println("Starting web server on port 8080")
-	http.ListenAndServe(":8080", nil)
+	http.ListenAndServe(":8080", fs)
 }
 
 func renderTemplate(w http.ResponseWriter, page string) {
