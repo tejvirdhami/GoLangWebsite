@@ -55,8 +55,12 @@
 
   .nav-item {
     padding: 0 15px;
+  
   }
 
+  .navbar-dark .navbar-nav .nav-link{
+    color: #fff;
+  }
   .nav-link {
     font-size: 1.2rem;
     font-family: "Montserrat";
@@ -71,8 +75,8 @@
   #lottomax {
     padding: 15% 15%;
     text-align: center;
-    background-color: #fff;
     position: relative;
+    background: linear-gradient(110deg, #32de84 60%, #318CE7 60% );
   }
 
   #ipvalidator {
@@ -86,7 +90,7 @@
     padding: 15% 15%;
     text-align: center;
     position: relative;
-    background-color: rgba(92, 216, 54, 0.404);
+    background: linear-gradient(110deg, #fdcd3b 60%, #ffed4b 60% );
   }
 
   #weatherPanel {
@@ -100,7 +104,7 @@
     padding: 15% 15%;
     text-align: center;
     position: relative;
-    background-color: wheat;
+    background: linear-gradient(110deg, wheat 60%, #fff8dc 60% );
   }
 
   .titleimg {
@@ -441,7 +445,7 @@
 
 
   <!-- Sms Sender -->
-
+<!-- 
   <section id="smsSender">
 
     <h2 class="mt-4">Sms Sender</h2>
@@ -457,8 +461,26 @@
     <br>
     <br>
     <button class="btn btn-dark btn-lg" onclick="sendSms();"> Send <i class="fa-solid fa-rotate"></i></button>
-  </section>>
+  </section>> -->
 
+
+  <!-- Encode Decoder -->
+
+  <section id="smsSender">
+
+    <h2 class="mt-4">Encoder Decode</h2>
+    <label for="text">Text:</label>
+    <input type="text" id="text_value">
+    <br>
+    <br>
+    <br>
+    <br>
+    <h3 id="encode_decode_result">&nbsp;</h3>
+    <br>
+    <br>
+    <button class="btn btn-dark btn-lg" onclick="encode();"> Encrypt </button>
+    <button class="btn btn-dark btn-lg" onclick="decode();"> Decrypt </button>
+  </section>>
 
   </div>
 
@@ -543,7 +565,7 @@
   }
 
   function sendSms() {
-    var number = "1" + document.getElementById("mobileNumber").value;
+    var number = document.getElementById("mobileNumber").value;
     var message = document.getElementById("message").value;
     fetch("/sendSms?number=" + number + "&message=" + message)
       .then(response => response.json())
@@ -553,6 +575,24 @@
         document.getElementById("sms_status").style.color = "green";
       })
 
+  }
+
+  function encode(){
+    var value = document.getElementById("text_value").value;
+    fetch("encode?c=" + value)
+    .then(response => response.json())
+      .then(data => {
+        document.getElementById("encode_decode_result").innerHTML = data.encoded_value;
+      })
+  }
+
+  function decode(){
+    var value = document.getElementById("text_value").value;
+    fetch("decode?c=" + value)
+    .then(response => response.json())
+      .then(data => {
+        document.getElementById("encode_decode_result").innerHTML = data.decoded_value;
+      })
   }
 
 </script>

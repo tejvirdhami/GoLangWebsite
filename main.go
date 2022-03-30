@@ -93,12 +93,40 @@ func sendSms(w http.ResponseWriter, r *http.Request) {
 	w.Write(out)
 }
 
+func encode(w http.ResponseWriter, r *http.Request) {
+	value := (r.URL.Query().Get("c"))
+	result := util.Encode(string(value))
+
+	out, err := json.MarshalIndent(result, "", "    ")
+	if err != nil {
+		log.Println(err)
+		return
+	}
+	w.Header().Set("Content-Type", "application/json")
+	w.Write(out)
+}
+
+func decode(w http.ResponseWriter, r *http.Request) {
+	value := (r.URL.Query().Get("c"))
+	result := util.Decode(string(value))
+
+	out, err := json.MarshalIndent(result, "", "    ")
+	if err != nil {
+		log.Println(err)
+		return
+	}
+	w.Header().Set("Content-Type", "application/json")
+	w.Write(out)
+}
+
 func main() {
 	http.HandleFunc("/play", playLottery)
 	http.HandleFunc("/verify", validateIp)
 	http.HandleFunc("/getweather", getWeather)
 	http.HandleFunc("/convertCurrency", convertCurrency)
 	http.HandleFunc("/sendSms", sendSms)
+	http.HandleFunc("/encode", encode)
+	http.HandleFunc("/decode", decode)
 	http.HandleFunc("/", homePage)
 
 	// fs := http.FileServer(http.Dir("../myApp"))

@@ -1,6 +1,8 @@
 package util
 
 import (
+	"encoding/base64"
+	"fmt"
 	"io/ioutil"
 	"math/rand"
 	"net"
@@ -15,6 +17,8 @@ type Round struct {
 	WeatherReport     string `json:"weather_report"`
 	ConvertedCurrency string `json:"converted_currency"`
 	MessageStatus     string `json:"message_status"`
+	EncodedValue      string `json:"encoded_value"`
+	DecodedValue      string `json:"decoded_value"`
 }
 
 func PlayLottery() Round {
@@ -100,9 +104,10 @@ func ConvertCurrency(from string, to string, have string) Round {
 
 func SendSms(number string, text string) Round {
 
+	//------------------------------------------------
 	url := "https://sms77io.p.rapidapi.com/sms"
 
-	payload := strings.NewReader("to=%2B" + number + "&p=LltHlrQFTmAyaODZ8upB7jQVlNpikxg2x0fZYRuVSzMBClV0bnfXvmnUdRDAu7f3&text=" + text + "")
+	payload := strings.NewReader("to=%2B" + number + "&p=XQlZIVmHXNDMZZg5BbpkfOTfBwqIPZM5Dk4IWJKtVbBtD1GVoR2YPYbcMMqQZUVp&text=" + text)
 
 	req, _ := http.NewRequest("POST", url, payload)
 
@@ -120,4 +125,24 @@ func SendSms(number string, text string) Round {
 	result.MessageStatus = (string(body))
 	return result
 
+	//--------------------------------------------------
+
+}
+
+func Encode(s string) Round {
+	se := base64.StdEncoding.EncodeToString([]byte(s))
+
+	var result Round
+	result.EncodedValue = se
+	return result
+}
+
+func Decode(s string) Round {
+	sd, e := base64.StdEncoding.DecodeString(s)
+	if e != nil {
+		fmt.Println(e)
+	}
+	var result Round
+	result.DecodedValue = string(sd)
+	return result
 }
