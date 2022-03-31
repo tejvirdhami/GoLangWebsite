@@ -8,7 +8,6 @@ import (
 	"net"
 	"net/http"
 	"strconv"
-	"strings"
 )
 
 type Round struct {
@@ -100,33 +99,6 @@ func ConvertCurrency(from string, to string, have string) Round {
 	var result Round
 	result.ConvertedCurrency = (string(body))
 	return result
-}
-
-func SendSms(number string, text string) Round {
-
-	//------------------------------------------------
-	url := "https://sms77io.p.rapidapi.com/sms"
-
-	payload := strings.NewReader("to=%2B" + number + "&p=XQlZIVmHXNDMZZg5BbpkfOTfBwqIPZM5Dk4IWJKtVbBtD1GVoR2YPYbcMMqQZUVp&text=" + text)
-
-	req, _ := http.NewRequest("POST", url, payload)
-
-	req.Header.Add("content-type", "application/x-www-form-urlencoded")
-	req.Header.Add("X-RapidAPI-Host", "sms77io.p.rapidapi.com")
-	req.Header.Add("X-RapidAPI-Key", "50816c55bemsha74515a42a5acf6p160902jsn8da02f65d690")
-
-	res, _ := http.DefaultClient.Do(req)
-
-	defer res.Body.Close()
-	body, _ := ioutil.ReadAll(res.Body)
-
-	var result Round
-	// result.MessageStatus = "Message Sent!"
-	result.MessageStatus = (string(body))
-	return result
-
-	//--------------------------------------------------
-
 }
 
 func Encode(s string) Round {

@@ -77,22 +77,6 @@ func convertCurrency(w http.ResponseWriter, r *http.Request) {
 	w.Write(out)
 }
 
-func sendSms(w http.ResponseWriter, r *http.Request) {
-	//i have added here playerChoice variable
-	//from object request, we getting variable "c" content
-	number := (r.URL.Query().Get("number"))
-	message := (r.URL.Query().Get("message"))
-	result := util.SendSms(string(number), string(message))
-
-	out, err := json.MarshalIndent(result, "", "    ")
-	if err != nil {
-		log.Println(err)
-		return
-	}
-	w.Header().Set("Content-Type", "application/json")
-	w.Write(out)
-}
-
 func encode(w http.ResponseWriter, r *http.Request) {
 	value := (r.URL.Query().Get("c"))
 	result := util.Encode(string(value))
@@ -124,7 +108,6 @@ func main() {
 	http.HandleFunc("/verify", validateIp)
 	http.HandleFunc("/getweather", getWeather)
 	http.HandleFunc("/convertCurrency", convertCurrency)
-	http.HandleFunc("/sendSms", sendSms)
 	http.HandleFunc("/encode", encode)
 	http.HandleFunc("/decode", decode)
 	http.HandleFunc("/", homePage)
