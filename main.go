@@ -12,13 +12,7 @@ func homePage(w http.ResponseWriter, r *http.Request) {
 	renderTemplate(w, "index.html")
 }
 
-// func ipPage(w http.ResponseWriter, r *http.Request) {
-// 	renderTemplate(w, "ipValidator.html")
-// }
-
 func playLottery(w http.ResponseWriter, r *http.Request) {
-	//i have added here playerChoice variable
-	//from object request, we getting variable "c" content
 	result := util.PlayLottery()
 
 	out, err := json.MarshalIndent(result, "", "    ")
@@ -31,8 +25,6 @@ func playLottery(w http.ResponseWriter, r *http.Request) {
 }
 
 func validateIp(w http.ResponseWriter, r *http.Request) {
-	//i have added here playerChoice variable
-	//from object request, we getting variable "c" content
 	ip := (r.URL.Query().Get("c"))
 	result := util.ValidateIp(string(ip))
 
@@ -46,8 +38,6 @@ func validateIp(w http.ResponseWriter, r *http.Request) {
 }
 
 func getWeather(w http.ResponseWriter, r *http.Request) {
-	//i have added here playerChoice variable
-	//from object request, we getting variable "c" content
 	city := (r.URL.Query().Get("c"))
 	result := util.GetWeather(string(city))
 
@@ -61,8 +51,6 @@ func getWeather(w http.ResponseWriter, r *http.Request) {
 }
 
 func convertCurrency(w http.ResponseWriter, r *http.Request) {
-	//i have added here playerChoice variable
-	//from object request, we getting variable "c" content
 	from := (r.URL.Query().Get("from"))
 	to := (r.URL.Query().Get("to"))
 	have := (r.URL.Query().Get("have"))
