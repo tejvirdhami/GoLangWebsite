@@ -12,7 +12,8 @@
   <!-- CSS only -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/styles.css">
+
+  <link rel="stylesheet" href="/data/css/style.css">
 
   <!-- Javascript from Bootstrap-->
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -34,119 +35,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;900&family=Ubuntu:wght@300;400;700&display=swap"
     rel="stylesheet">
-  <style>
-    body {
-      font-family: "Montserrat";
-    }
 
-    .container-fluid {
-      padding: 3% 14% 15%;
-    }
-
-    .navbar {
-      padding: 0 0 4.5rem;
-    }
-
-    .navbar-brand {
-      font-family: "Ubuntu";
-      font-size: 2rem;
-      font-weight: bold;
-    }
-
-    .nav-item {
-      padding: 0 15px;
-
-    }
-
-    .navbar-dark .navbar-nav .nav-link {
-      color: #fff;
-    }
-
-    .nav-link {
-      font-size: 1.2rem;
-      font-family: "Montserrat";
-      font-weight: 300;
-    }
-
-    #title {
-      /* background-color: #A1C3D1; */
-      background-color: #318CE7;
-      color: #fff;
-    }
-
-    #lottomax {
-      padding: 15% 15%;
-      text-align: center;
-      position: relative;
-      background: linear-gradient(110deg, #318CE7, #32de84, #318CE7);
-    }
-
-    #ipvalidator {
-      padding: 15% 15%;
-      text-align: center;
-      background-color: #868B94;
-      position: relative;
-    }
-
-    #currencyconverter {
-      padding: 15% 15%;
-      text-align: center;
-      position: relative;
-      /* background: linear-gradient(110deg, #fdcd3b 60%, #ffed4b 60% ); */
-      background: linear-gradient(110deg, #228b22, #32de84, #228b22);
-    }
-
-    #weatherPanel {
-      padding: 10% 0%;
-      text-align: center;
-      position: relative;
-      background-color: rgb(160, 216, 248);
-    }
-
-    #encoder {
-      padding: 15% 15%;
-      text-align: center;
-      position: relative;
-      background: linear-gradient(110deg, #868B94, gray, #868B94);
-    }
-
-    .titleimg {
-      text-align: center;
-    }
-
-
-    h1 {
-      font-family: "Montserrat";
-      font-weight: 900;
-      font-size: 3rem;
-      line-height: 1.5;
-    }
-
-    h2 {
-      font-family: "Montserrat";
-      font-weight: bold;
-      font-size: 2.5rem;
-      line-height: 1.5;
-    }
-
-    h3 {
-      font-family: "Montserrat";
-      font-weight: bold;
-      font-size: 1.5rem;
-    }
-
-
-    #footer {
-      text-align: center;
-      background-color: #fff;
-      padding: 7% 15%;
-    }
-
-    .footer-item {
-      margin: 1%;
-      color: #1C2331;
-    }
-  </style>
 </head>
 
 <body>
@@ -479,121 +368,8 @@
 
 
 </body>
-<script>
 
-  document.getElementById("weatherpanel").style.visibility = "hidden";
-
-  function choose() {
-    fetch("/play")
-      .then(response => response.json())
-      .then(data => {
-        document.getElementById("winning_numbers").innerHTML = "Winning Numbers are: " + data.winning_numbers;
-        document.getElementById("winning_numbers").style.color = "green";
-      })
-  }
-
-  function validate() {
-    var ip = document.getElementById("ipaddress").value;
-
-    if (ip == "") {
-      alert("Ip cannot be empty!");
-      return;
-    }
-
-    fetch("/verify?c=" + ip)
-      .then(response => response.json())
-      .then(data => {
-        document.getElementById("validate_ip").innerHTML = data.ip_validator_result;
-        if (data.ip_validator_result == "It is a Valid IP!") {
-          document.getElementById("validate_ip").style.color = "green";
-        } else {
-          document.getElementById("validate_ip").style.color = "red";
-        }
-      })
-  }
-
-
-  function getWeather() {
-    var location = document.getElementById("city").value;
-
-    if (location == "") {
-      alert("Location cannot be empty!");
-      return;
-    }
-
-    fetch("/getweather?c=" + location)
-      .then(response => response.json())
-      .then(data => {
-
-        //TEST
-        // document.getElementById("weatherReport").innerHTML = data.weather_report;
-
-        var obj = JSON.parse(data.weather_report);
-
-        document.getElementById("locationName").innerHTML = obj.location.name;
-        document.getElementById("time").innerHTML = obj.location.localtime;
-        document.getElementById("cuurentTemp").innerHTML = obj.current.temp_c + "°C";
-        document.getElementById("currentCondition").innerHTML = obj.current.condition.text;
-        document.getElementById("currentImage").src = obj.current.condition.icon;
-        document.getElementById("windSpeed").innerHTML = "Wind Speed: " + obj.current.wind_kph + " km/h";
-        document.getElementById("feelsLike").innerHTML = "Feels like: " + obj.current.feelslike_c + "°C";
-        document.getElementById("visibility").innerHTML = "Visibility: " + obj.current.vis_km + " km";
-        document.getElementById("weatherpanel").style.visibility = "visible";
-
-
-      })
-  }
-
-  function covert() {
-    var from = document.getElementById("from").value;
-    var to = document.getElementById("to").value;
-    var amt = document.getElementById("amt").value;
-
-    if (amt == "") {
-      alert("Amount cannot be empty!");
-      return;
-    }
-
-    fetch("/convertCurrency?from=" + from + "&to=" + to + "&have=" + amt)
-      .then(response => response.json())
-      .then(data => {
-
-        var obj = JSON.parse(data.converted_currency);
-
-        document.getElementById("conversion_result").innerHTML = obj.old_amount + " " + obj.old_currency + " equals " + obj.new_amount + " " + obj.new_currency + ".";
-
-      })
-  }
-
-  function encode() {
-    var value = document.getElementById("text_value").value;
-
-    if (value == "") {
-      alert("Text cannot be empty!");
-      return;
-    }
-
-    fetch("encode?c=" + value)
-      .then(response => response.json())
-      .then(data => {
-        document.getElementById("encode_decode_result").innerHTML = "Encrypted Value : " + data.encoded_value;
-      })
-  }
-
-  function decode() {
-    var value = document.getElementById("text_value").value;
-
-    if (value == "") {
-      alert("Text cannot be empty!");
-      return;
-    }
-
-    fetch("decode?c=" + value)
-      .then(response => response.json())
-      .then(data => {
-        document.getElementById("encode_decode_result").innerHTML = "Decrypted Value : " + data.decoded_value;
-      })
-  }
+<script src="/data/js/script.js">
 
 </script>
 

@@ -100,6 +100,8 @@ func main() {
 	http.HandleFunc("/decode", decode)
 	http.HandleFunc("/", homePage)
 
+	http.Handle("/data/", http.StripPrefix("/data/", http.FileServer(http.Dir("data"))))
+
 	// fs := http.FileServer(http.Dir("../myApp"))
 	log.Println("Starting web server on port 8080")
 	http.ListenAndServe(":8080", nil)

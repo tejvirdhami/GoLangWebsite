@@ -1,0 +1,111 @@
+body {
+    font-family: "Montserrat";
+  }
+
+  .container-fluid {
+    padding: 3% 14% 15%;
+  }
+
+  .navbar {
+    padding: 0 0 4.5rem;
+  }
+
+  .navbar-brand {
+    font-family: "Ubuntu";
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+  .nav-item {
+    padding: 0 15px;
+
+  }
+
+  .navbar-dark .navbar-nav .nav-link {
+    color: #fff;
+  }
+
+  .nav-link {
+    font-size: 1.2rem;
+    font-family: "Montserrat";
+    font-weight: 300;
+  }
+
+  #title {
+    /* background-color: #A1C3D1; */
+    background-color: #318CE7;
+    color: #fff;
+  }
+
+  #lottomax {
+    padding: 15% 15%;
+    text-align: center;
+    position: relative;
+    background: linear-gradient(110deg, #318CE7, #32de84, #318CE7);
+  }
+
+  #ipvalidator {
+    padding: 15% 15%;
+    text-align: center;
+    background-color: #868B94;
+    position: relative;
+  }
+
+  #currencyconverter {
+    padding: 15% 15%;
+    text-align: center;
+    position: relative;
+    /* background: linear-gradient(110deg, #fdcd3b 60%, #ffed4b 60% ); */
+    background: linear-gradient(110deg, #228b22, #32de84, #228b22);
+  }
+
+  #weatherPanel {
+    padding: 10% 0%;
+    text-align: center;
+    position: relative;
+    background-color: rgb(160, 216, 248);
+  }
+
+  #encoder {
+    padding: 15% 15%;
+    text-align: center;
+    position: relative;
+    background: linear-gradient(110deg, #868B94, gray, #868B94);
+  }
+
+  .titleimg {
+    text-align: center;
+  }
+
+
+  h1 {
+    font-family: "Montserrat";
+    font-weight: 900;
+    font-size: 3rem;
+    line-height: 1.5;
+  }
+
+  h2 {
+    font-family: "Montserrat";
+    font-weight: bold;
+    font-size: 2.5rem;
+    line-height: 1.5;
+  }
+
+  h3 {
+    font-family: "Montserrat";
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+
+
+  #footer {
+    text-align: center;
+    background-color: #fff;
+    padding: 7% 15%;
+  }
+
+  .footer-item {
+    margin: 1%;
+    color: #1C2331;
+  }
